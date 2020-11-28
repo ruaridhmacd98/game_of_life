@@ -1,6 +1,6 @@
 {
   "homepage": "https://github.com/ruaridhmacd98/game_of_life",
-  "name": "game-of-life",
+  "name": "react-gameoflife",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
