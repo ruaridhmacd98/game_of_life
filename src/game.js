@@ -32,7 +32,7 @@ export default class PathfindingVisualizer extends Component {
 			for (let row = 0; row < newBoard.length ; row++) {
 						for (let col = 0; col < newBoard[0].length; col++) {
 										let neighbors = this.calculateNeighbors(this.state.grid, col, row);
-										if (this.state.grid[row][col]) {
+										if (this.state.grid[row][col].isAlive) {
 												if (neighbors === 2 || neighbors === 3) {
 														newBoard[row][col] = createNode(col, row, true);
 												} else {
@@ -129,11 +129,17 @@ export default class PathfindingVisualizer extends Component {
 							})}
 						</div>
 					  <div className="controls">
-									Update every <input value={this.state.interval}
-									onChange={this.handleIntervalChange} /> msec
+
+									<div class="slidecontainer">
+									   Change Iteration Speed
+									</div>
+									<input type="range" min="10" max="1000" value={this.state.interval}
+									 onChange={this.handleIntervalChange} class="slider" id="myRange" />
+									<div className="separator"></div>
 									{this.state.isRunning ? <button className="button" onClick={this.stopGame}>Stop</button>
 													 	: <button className="button" onClick={this.runGame}>Run</button>
 									}
+									<div className="separator"></div>
 									<button className="button" onClick={this.clearBoard}>Clear Board</button>
 						</div>
 					</>
