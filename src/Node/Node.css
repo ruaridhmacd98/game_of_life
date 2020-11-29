@@ -10,3 +10,20 @@
     background-color: rgb(12, 53, 71);
     border-radius: 25%;
   }
+
+.node-dead1 {
+    background-color: rgba(12, 53, 71, 0.8);
+    border-radius: 25%;
+  }
+.node-dead2 {
+    background-color: rgba(12, 53, 71, 0.6);
+    border-radius: 25%;
+  }
+.node-dead3 {
+    background-color: rgba(12, 53, 71, 0.4);
+    border-radius: 25%;
+  }
+.node-dead4 {
+    background-color: rgba(12, 53, 71, 0.2);
+    border-radius: 25%;
+  }

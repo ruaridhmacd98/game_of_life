@@ -45,7 +45,7 @@ export default class PathfindingVisualizer extends Component {
                         }
                         else {
                             newBoard[row][col].isAlive=false;
-			    newBoard[row][col].timeDead++;
+			    newBoard[row][col].timeDead = 1 + this.state.grid[row][col].timeDead;
                         }
                     }
             }
