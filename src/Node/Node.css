@@ -1,29 +1,21 @@
 .node {
     width: 25px;
       height: 25px;
-        outline: 1px solid rgb(175, 216, 248);
-    background-color: rgb(255, 255, 255);
+        /* outline: 1px solid rgb(175, 216, 248); */
           display: inline-block;
+	  vertical-align: top;
   }
 
 .node-alive {
-    background-color: rgb(12, 53, 71);
-    border-radius: 25%;
+    background-color: rgb(113, 217, 227);
+    border-radius: 100%;
   }
 
 .node-dead1 {
-    background-color: rgba(12, 53, 71, 0.8);
-    border-radius: 25%;
+    background-color: rgb(84, 163, 170);
+    border-radius: 100%;
   }
 .node-dead2 {
-    background-color: rgba(12, 53, 71, 0.6);
-    border-radius: 25%;
-  }
-.node-dead3 {
-    background-color: rgba(12, 53, 71, 0.4);
-    border-radius: 25%;
-  }
-.node-dead4 {
-    background-color: rgba(12, 53, 71, 0.2);
-    border-radius: 25%;
+    background-color: rgb(65, 130, 132);
+    border-radius: 100%;
   }

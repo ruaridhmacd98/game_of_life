@@ -103,11 +103,29 @@ export default class PathfindingVisualizer extends Component {
           this.setState({ grid: getInitialGrid() });
     }
 
+    randomBoard = () => {
+          this.setState({ grid: getRandomGrid() });
+    }
+
     render() {
           const {grid, mouseIsPressed} = this.state;
 
           return (
           <>
+            <div className="controls">
+                  <div class="slidecontainer">
+                     Change Iteration Speed
+                  </div>
+                  <input type="range" min="10" max="1000" value={this.state.interval}
+                   onChange={this.handleIntervalChange} class="slider" id="myRange" />
+                  <div className="separator"></div>
+                  {this.state.isRunning ? <button className="button" onClick={this.stopGame}>Stop</button>
+                            : <button className="button" onClick={this.runGame}>Run</button>
+                  }
+                  <div className="separator"></div>
+                  <button className="button" onClick={this.clearBoard}>Clear Board</button>
+                  <button className="button" onClick={this.randomBoard}>Generate Random Starting Pattern</button>
+            </div>
             <div className="grid">
               {grid.map((row, rowIdx) => {
                 return (
@@ -131,20 +149,6 @@ export default class PathfindingVisualizer extends Component {
                 );
               })}
             </div>
-            <div className="controls">
-
-                  <div class="slidecontainer">
-                     Change Iteration Speed
-                  </div>
-                  <input type="range" min="10" max="1000" value={this.state.interval}
-                   onChange={this.handleIntervalChange} class="slider" id="myRange" />
-                  <div className="separator"></div>
-                  {this.state.isRunning ? <button className="button" onClick={this.stopGame}>Stop</button>
-                            : <button className="button" onClick={this.runGame}>Run</button>
-                  }
-                  <div className="separator"></div>
-                  <button className="button" onClick={this.clearBoard}>Clear Board</button>
-            </div>
           </>
         );
         }
@@ -155,6 +159,18 @@ const getInitialGrid = () => {
           const currentRow = [];
           for (let col = 0; col < 50; col++) {
                   currentRow.push(createNode(col, row, false));
+                }
+          grid.push(currentRow);
+        }
+    return grid;
+};
+const getRandomGrid = () => {
+    const grid = [];
+    for (let row = 0; row < 20; row++) {
+          const currentRow = [];
+          for (let col = 0; col < 50; col++) {
+		  var random_boolean = Math.random() < 0.5;
+                  currentRow.push(createNode(col, row, random_boolean));
                 }
           grid.push(currentRow);
         }

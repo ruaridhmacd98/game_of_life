@@ -1,1 +1,6 @@
-.grid { margin: 100px 0 0;}
+.grid { 
+  display: inline-block;
+  border-style: solid;
+  border-width: medium;
+  border-color: rgb(113, 217, 227);
+}

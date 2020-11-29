@@ -18,8 +18,6 @@ export default class Node extends Component {
             isAlive ? 'node-alive' :
             !isAlive && timeDead === 1 ? 'node-dead1' :
             !isAlive && timeDead === 2 ? 'node-dead2' :
-            !isAlive && timeDead === 3 ? 'node-dead3' :
-            !isAlive && timeDead === 4 ? 'node-dead4' :
             ''
           );
 
