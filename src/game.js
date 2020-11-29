@@ -113,16 +113,17 @@ export default class PathfindingVisualizer extends Component {
           return (
           <>
             <div className="controls">
-                  <div class="slidecontainer">
-                     Change Iteration Speed
-                  </div>
-                  <input type="range" min="10" max="1000" value={this.state.interval}
-                   onChange={this.handleIntervalChange} class="slider" id="myRange" />
-                  <div className="separator"></div>
+		  Conway's Game of Life
+		    <select onChange={this.handleIntervalChange} class="slider" id="myRange" >
+			  <option selected disabled>Select Iteration Speed</option>
+			  <option value="200">Slow</option>
+			  <option value="100">Medium</option>
+			  <option value="50">Fast</option>
+			  <option value="10">Very Fast</option>
+		    </select>
                   {this.state.isRunning ? <button className="button" onClick={this.stopGame}>Stop</button>
                             : <button className="button" onClick={this.runGame}>Run</button>
                   }
-                  <div className="separator"></div>
                   <button className="button" onClick={this.clearBoard}>Clear Board</button>
                   <button className="button" onClick={this.randomBoard}>Generate Random Starting Pattern</button>
             </div>
@@ -155,7 +156,7 @@ export default class PathfindingVisualizer extends Component {
 }
 const getInitialGrid = () => {
     const grid = [];
-    for (let row = 0; row < 20; row++) {
+    for (let row = 0; row < 25; row++) {
           const currentRow = [];
           for (let col = 0; col < 50; col++) {
                   currentRow.push(createNode(col, row, false));
@@ -166,7 +167,7 @@ const getInitialGrid = () => {
 };
 const getRandomGrid = () => {
     const grid = [];
-    for (let row = 0; row < 20; row++) {
+    for (let row = 0; row < 25; row++) {
           const currentRow = [];
           for (let col = 0; col < 50; col++) {
 		  var random_boolean = Math.random() < 0.5;
