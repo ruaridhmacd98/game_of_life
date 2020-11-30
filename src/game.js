@@ -112,46 +112,21 @@ export default class PathfindingVisualizer extends Component {
 
           return (
           <>
-<div id='navbarDiv'>
-     <nav class="navbar navbar-inverse">
-       <div class="container-fluid">
-         <div class="navbar-header">
-           <div class="navbar-brand">Conway's Game of Life</div>
-         </div>
-         <ul class="nav navbar-nav">
-           <li>
-                  {this.state.isRunning ? <button class="btn btn-default navbar-btn" onClick={this.stopGame}>Stop</button>
-                            : <button class="btn btn-default navbar-btn" onClick={this.runGame}>Run</button>
-                  }
-	   </li>
-           <li>
-                  <button class="btn btn-default navbar-btn" onClick={this.clearBoard}>Clear Board</button>
-	   </li>
-           <li>
-                  <button class="btn btn-default navbar-btn" onClick={this.randomBoard}>Generate Random Starting Pattern</button>
-	   </li>
-           <li class="dropdown">
-             <a id="adjustSpeed" class="dropdown-toggle" data-toggle="dropdown" href="#">Speed: Fast
-             <span class="caret"></span></a>
-             <ul class="dropdown-menu">
-               <li id='adjustFast'><a href="#">Fast</a></li>
-               <li id='adjustAverage'><a href="#">Average</a></li>
-               <li id='adjustSlow'><a href="#">Slow</a></li>
-             </ul>
-           </li>
-	  <li class="nav-item">
-		    <select onChange={this.handleIntervalChange}>
+            <div className="controls">
+		  <b>Conway's Game of Life</b>
+		    <select onChange={this.handleIntervalChange} class="select" >
 			  <option selected disabled>Select Iteration Speed</option>
 			  <option value="200">Slow</option>
 			  <option value="100">Medium</option>
 			  <option value="50">Fast</option>
 			  <option value="10">Very Fast</option>
 		    </select>
-          </li>
-         </ul>
-       </div>
-     </nav>
-   </div>
+                  {this.state.isRunning ? <button className="button" onClick={this.stopGame}>Stop</button>
+                            : <button className="button" onClick={this.runGame}>Run</button>
+                  }
+                  <button className="button" onClick={this.clearBoard}>Clear Board</button>
+                  <button className="button" onClick={this.randomBoard}>Generate Random Starting Pattern</button>
+            </div>
             <div className="grid">
               {grid.map((row, rowIdx) => {
                 return (
