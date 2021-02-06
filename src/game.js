@@ -3,7 +3,7 @@ import Node from './Node/Node';
 
 import './game.css';
 
-export default class PathfindingVisualizer extends Component {
+export default class LifeGame extends Component {
     constructor() {
           super();
           this.state = {
