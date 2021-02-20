@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Node from './Node/Node';
+import Tutorial from './tutorial.js';
 
 import './game.css';
 
@@ -124,8 +125,9 @@ export default class LifeGame extends Component {
                   {this.state.isRunning ? <button className="button" onClick={this.stopGame}>Stop</button>
                             : <button className="button" onClick={this.runGame}>Run</button>
                   }
-                  <button className="button" onClick={this.clearBoard}>Clear Board</button>
-                  <button className="button" onClick={this.randomBoard}>Generate Random Starting Pattern</button>
+		  <Tutorial/>
+                  <button className="button" onClick={this.clearBoard}>Clear</button>
+                  <button className="button" onClick={this.randomBoard}>Random</button>
             </div>
             <div className="grid">
               {grid.map((row, rowIdx) => {
