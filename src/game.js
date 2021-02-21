@@ -125,9 +125,9 @@ export default class LifeGame extends Component {
                   {this.state.isRunning ? <button className="button" onClick={this.stopGame}>Stop</button>
                             : <button className="button" onClick={this.runGame}>Run</button>
                   }
-		  <Tutorial/>
-                  <button className="button" onClick={this.clearBoard}>Clear</button>
                   <button className="button" onClick={this.randomBoard}>Random</button>
+                  <button className="button" onClick={this.clearBoard}>Clear</button>
+		  <Tutorial/>
             </div>
             <div className="grid">
               {grid.map((row, rowIdx) => {

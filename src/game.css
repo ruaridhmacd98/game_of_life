@@ -29,14 +29,17 @@
   font-size: 24px;
   border-radius: 12px;
   transition-duration: 0.4s;
-  margin-left: 30px;
+  margin-left: 20px;
+  margin-right: 10px;
+  height: 40px;
 }
 
 .button {
   font-size: 24px;
   border-radius: 12px;
   transition-duration: 0.4s;
-  margin-left: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .button:hover {
