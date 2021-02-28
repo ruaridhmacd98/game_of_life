@@ -18,7 +18,7 @@ export default () => (
         <div className="header"><h1>Tutorial</h1></div>
         <div className="content">
           {' '}
-          Click and drag to place cells. <br/>
+          <b>Click</b> and <b>drag</b> to place cells. <br/>
 	  Or press 'Random' to start with a random grid.<br/> 
 	  Press 'Run' to start the simulation.<br/>
 	    <h1>Explanation</h1>
